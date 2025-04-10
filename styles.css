@@ -1,9 +1,12 @@
+/* Basic styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
+/* Navigation Bar */
 header {
     background-color: #333;
     color: white;
@@ -13,10 +16,15 @@ header {
     align-items: center;
 }
 
-header .logo a {
+header .logo-link {
     color: white;
     font-size: 1.5rem;
     text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+header .logo-link:hover {
+    text-decoration: underline;
 }
 
 nav ul {
@@ -34,19 +42,84 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
+    transition: text-decoration 0.3s ease;
 }
 
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
-    text-align: center;
     padding: 1rem;
-    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
     width: 100%;
-    bottom: 0;
+}
+
+footer .footer-left {
+    font-size: 1rem;
+}
+
+footer .footer-right {
+    display: flex;
+    gap: 20px;
 }
 
 footer a {
     color: white;
     text-decoration: none;
+    font-size: 1rem;
+    transition: text-decoration 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Specific styles for the "Mail Us!" and "Contact Us!" links */
+.email-link {
+    position: relative;
+}
+
+.email-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.email-link:hover::after {
+    width: 100%;
+}
+
+/* Footer link hover underline */
+.contact-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.contact-link:hover::after {
+    width: 100%;
 }
